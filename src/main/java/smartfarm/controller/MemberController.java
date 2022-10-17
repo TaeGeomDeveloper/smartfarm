@@ -2,6 +2,7 @@ package smartfarm.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,6 +12,7 @@ import smartfarm.vo.MemberVO;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 
 @Controller("personController")
@@ -35,7 +37,16 @@ public class MemberController {
 		mav.setViewName(viewName);
 		return mav;
 	}
-	
+
+	@RequestMapping(value = "/Register.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView Register(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/Register";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
 	@RequestMapping(value = "/Register.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView Register(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
@@ -99,7 +110,46 @@ public class MemberController {
 		mav.setViewName("Main");
 		return mav;
 	}
-	
+	@RequestMapping(value = "/ReadInfo.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView readInfo(HttpServletRequest request, HttpServletResponse response) throws Exception{
+		ModelAndView mav = new ModelAndView();
+		String id = request.getParameter("id");
+		MemberVO member = memberDAO.selectOneMember(id);
+		mav.addObject("member",member);
+		mav.setViewName("/smartfarm/ReadInfo");
+		return mav;
+	}
+
+	@RequestMapping(value = "/UpdateMember.do", method = RequestMethod.POST)
+	public ModelAndView UpdateMember(@ModelAttribute("info")MemberVO member, HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mav = new ModelAndView();
+		memberDAO.updateOneMember(member);
+		mav.addObject("member",member);
+		System.out.println("memberID--->"+member.getId());
+		mav.setViewName("redirect:/smartfarm/ReadInfo.do?id="+member.getId()+"&mode=r");
+		return mav;
+	}
+
+	@RequestMapping(value = "/deleteMember.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView deleteMember(HttpServletRequest request, HttpServletResponse response){
+		ModelAndView mav = new ModelAndView();
+		String id = request.getParameter("id");
+		memberDAO.deleteOneMember(id);
+		request.getSession().invalidate();
+		mav.setViewName("redirect:/smartfarm/Main.do");
+		return mav;
+	}
+
+	@RequestMapping(value = "/MemberList.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView memberList(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		List<MemberVO> list = memberDAO.selectAllMemeber();
+		mav.addObject("list",list);
+		mav.setViewName("List");
+		return mav;
+	}
+
 	private String getViewName(HttpServletRequest request) throws Exception {
 		String contextPath = request.getContextPath();
 		String uri = (String) request.getAttribute("javax.servlet.include.request_uri");

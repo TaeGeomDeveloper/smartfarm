@@ -67,6 +67,11 @@
                             <button class="button w-100" type="submit" onclick="fn_sendPerson()">로그인</button>
                         </td>
                     </tr>
+                    <tr>
+                        <td align="center">
+                            <a href="deleteMember.do?id=${member.id}"> <button class="button2">ID 또는 PW 찾기</button></a>
+                        </td>
+                    </tr>
                     <td class="mt-5 mb-3 text-muted">&copy; 2022 기가막히조</td>
                     </tr>
                 </table>

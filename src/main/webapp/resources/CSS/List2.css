@@ -1,10 +1,13 @@
 #list_table{
     border: 5px solid #04AA6D;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #list_table th{
     color: white;
     background-color: #04AA6D;
+    text-align: center;
 }
 
 #list_table th,td {

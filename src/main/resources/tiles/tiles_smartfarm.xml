@@ -31,4 +31,9 @@
         <put-attribute name="body" value="/WEB-INF/views/smartfarm/Register.jsp" />
     </definition>
 
+    <definition name="/smartfarm/ReadInfo" extends="baseLayout">
+        <put-attribute name="title" value="내정보" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/ReadInfo.jsp" />
+    </definition>
+
 </tiles-definitions>

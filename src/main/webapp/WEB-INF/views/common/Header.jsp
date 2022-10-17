@@ -14,7 +14,7 @@
 <html>
 <head>
     <title>Header</title>
-    <link rel="stylesheet" href="${contextPath}/resources/CSS/List.css" type="text/css" />
+    <link rel="stylesheet" href="${contextPath}/resources/CSS/List2.css" type="text/css" />
     <link rel="stylesheet" href="${contextPath}/resources/CSS/Main2.css" type="text/css" />
     <%-- 폰트 --%>
     <style>
@@ -35,7 +35,7 @@
                 <h5 align="right">환영합니다. ${user.name}님! </h5>
                 <ul>
                     <li>
-                        <a href="ReadInfo.do">
+                        <a href="ReadInfo.do?id=${user.id}&mode=r">
                             <button class="button">내정보</button>
                         </a>
                     </li>
