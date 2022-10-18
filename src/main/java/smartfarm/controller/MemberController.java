@@ -38,11 +38,23 @@ public class MemberController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/Register.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView Register(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	@RequestMapping(value = "/Forgot.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView Forgot(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		String viewName = this.getViewName(request);
-		viewName= "/smartfarm/Register";
+		viewName= "/smartfarm/Forgot";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
+	@RequestMapping(value = "/WriteSales.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView WriteSales(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+//		String id = request.getParameter("id");
+//		MemberVO member = memberDAO.selectOneMember(id);
+//		mav.addObject("member",member);
+		viewName= "/smartfarm/WriteSales";
 		mav.setViewName(viewName);
 		return mav;
 	}

@@ -8,14 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
 <c:set var="contextPath"  value="${pageContext.request.contextPath}"  />
 
 <html>
 <head>
     <title>Header</title>
-    <link rel="stylesheet" href="${contextPath}/resources/CSS/List2.css" type="text/css" />
-    <link rel="stylesheet" href="${contextPath}/resources/CSS/Main2.css" type="text/css" />
     <%-- 폰트 --%>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
@@ -99,6 +96,13 @@
                     <li class="nav-item">
                         <a class="nav-link disabled">사용자 UI</a>
                     </li>
+                    <c:choose>
+                        <c:when test="${user != null}">
+                            <li class="nav-item">
+                                <a class="nav-link" href="${contextPath}/smartfarm/WriteSales.do">상품 판매 작성</a>
+                            </li>
+                        </c:when>
+                    </c:choose>
                 </ul>
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

@@ -59,7 +59,7 @@
 
         <div id="Main_Box">
             <h1> 사원정보 </h1>
-            <table id="list_table">
+            <table class="list_table">
                 <tr>
                     <th>사원 번호</th>
                     <th id="title">이름</th>

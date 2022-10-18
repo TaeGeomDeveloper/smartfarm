@@ -59,7 +59,7 @@ article {
     flex: 3;
     background-color: white;
     /*background: linear-gradient(darkgrey,darkslategray);*/
-    height: 800px; /* only for demonstration, should be removed */
+    height: auto; /* only for demonstration, should be removed */
 }
 
 /* Clear floats after the columns */

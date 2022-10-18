@@ -11,11 +11,8 @@
     <title>Main</title>
 
     <!-- 스타일시트 연결 -->
-    <link rel="stylesheet" href="../CSS/List.css" type="text/css">
-    <link rel="stylesheet" href="../CSS/Main2.css" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" type="text/css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <%-- 폰트 --%>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
@@ -38,7 +35,7 @@
 <section>
     <article>
 
-        <div id="Main_Box" align="center">
+        <div id="Main_Box" align="center" style="margin-top: 50px">
             <h1> 회원가입 </h1>
             <form name="SendPerson">
                 <table>

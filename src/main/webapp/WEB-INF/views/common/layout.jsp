@@ -11,14 +11,21 @@
     <meta charset="UTF-8">
 
     <!-- 스타일시트 연결 -->
+    <link rel="stylesheet" href="${contextPath}/resources/CSS/List3.css" type="text/css" />
+    <link rel="stylesheet" href="${contextPath}/resources/CSS/Main3.css" type="text/css" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
           type="text/css">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
     <%-- 폰트 --%>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
     </style>
+
+    <script type="text/javascript" src="${contextPath}/resources/static/smarteditor/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 
     <style>
         /*#container {*/

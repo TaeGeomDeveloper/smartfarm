@@ -71,7 +71,7 @@
 
         <div id="Main_Box">
             <form name="SendPerson">
-                <table id="list_table">
+                <table class="list_table">
                     <tr>
                         <th>사원 번호</th> <td><input type="text" name="Num" value="${person.num}" readonly="readonly"></td>
                     </tr>

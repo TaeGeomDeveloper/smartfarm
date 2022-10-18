@@ -3,6 +3,7 @@
   <component name="WebContextManager">
     <option name="state">
       <map>
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/smartfarm/Login.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/smartfarm" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/smartfarm/ReadInfo.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/smartfarm" />
       </map>
     </option>

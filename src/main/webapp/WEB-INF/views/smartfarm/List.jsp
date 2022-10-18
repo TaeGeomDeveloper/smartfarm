@@ -12,9 +12,8 @@
     <title>List</title>
 
     <!-- 스타일시트 연결 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" type="text/css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <%-- 폰트 --%>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
@@ -30,7 +29,7 @@
 
         <div id="Main_Box">
             <h1> 회원정보 리스트 </h1>
-            <table id="list_table">
+            <table class="list_table">
                 <tr>
                     <th>아이디</th>
                     <th id="title">이름</th>
