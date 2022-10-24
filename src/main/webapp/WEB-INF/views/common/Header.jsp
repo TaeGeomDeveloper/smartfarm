@@ -29,10 +29,10 @@
     <nav>
         <c:choose>
             <c:when test="${user != null}">
-                <h5 align="right">환영합니다. ${user.name}님! </h5>
+                <h5 align="right">환영합니다. ${user.mi_name}님! </h5>
                 <ul>
                     <li>
-                        <a href="ReadInfo.do?id=${user.id}&mode=r">
+                        <a href="ReadInfo.do?mi_id=${user.mi_id}&mode=r">
                             <button class="button">내정보</button>
                         </a>
                     </li>
@@ -74,36 +74,64 @@
             <div class="collapse navbar-collapse" id="navbarScroll">
                 <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">서비스소개</a>
+                        <a class="nav-link active" aria-current="page" href="${contextPath}/smartfarm/ItemInfo.do">서비스소개</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">과일</a>
-                    </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                           aria-expanded="false">
-                            야채
+                           aria-expanded="true">
+                            알림 소식
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">시금치</a></li>
-                            <li><a class="dropdown-item" href="#">고추</a></li>
+                        <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 shadow w-220px">
+                            <li><a class="dropdown-item rounded-2 active" href="${contextPath}/smartfarm/Notice.do">공지사항</a></li>
+                            <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/Board.do">자유게시판</a></li>
+                            <li><a class="dropdown-item rounded-2" href="#">관련 뉴스</a></li>
+                            <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/Support.do">농부 지원 사업</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/Reference.do">자료실</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                           aria-expanded="true">
+                            스마트팜
+                        </a>
+                        <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 shadow w-220px">
+                            <li><a class="dropdown-item rounded-2" href="#">스마트팜 이란</a></li>
+                            <li><a class="dropdown-item rounded-2" href="#">스마트팜 지원사업</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">토마토</a></li>
+                            <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/PotatoSalesList.do">스마트팜 장비</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled">사용자 UI</a>
-                    </li>
+
                     <c:choose>
                         <c:when test="${user != null}">
-                            <li class="nav-item">
-                                <a class="nav-link" href="${contextPath}/smartfarm/WriteSales.do">상품 판매 작성</a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                   aria-expanded="true">
+                                    귀농 지원 서비스
+                                </a>
+
+                                <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 shadow w-220px">
+                                    <li><a class="dropdown-item rounded-2 active" href="${contextPath}/smartfarm/Farm.do">생육 정보</a></li>
+                                    <li><a class="dropdown-item rounded-2" href="#">귀농 절차</a></li>
+                                    <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/Advice.do">전문가 상담/문의</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/TomatoSalesList.do">농업 용품</a></li>
+                                </ul>
                             </li>
                         </c:when>
+                        <c:otherwise>
+                            <li class="nav-item">
+                                <a class="nav-link disabled">귀농 지원 서비스</a>
+                            </li>
+                        </c:otherwise>
                     </c:choose>
                 </ul>
+
                 <form class="d-flex" role="search">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success" type="submit">Search</button>

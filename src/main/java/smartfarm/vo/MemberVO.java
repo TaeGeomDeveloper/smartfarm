@@ -3,153 +3,120 @@ package smartfarm.vo;
 import java.sql.Timestamp;
 
 public class MemberVO {
-	
-	private String id;
-	private String pwd;
-	private String name;
-	private String email;
-	private String b_num;
-	private String phone;
-	private String l_phone;
-	private String address;
-	private String d_address;
-	private int postal_code;
-	private String r_num;
-	private String member_type;
-	private String business;
-	private Timestamp join_date;
-	
+	private String mi_id;
+	private String mi_password;
+	private String mi_name;
+	private String mi_email;
+	private String mi_phone;
+	private String mi_wireline;
+	private String mi_address;
+	private String mi_addressDetail;
+	private String mi_addressCode;
+	private String mi_regidentRegNumber;
+	private Timestamp mi_joinDate;
+
 	public MemberVO() {}
-	
-	public MemberVO(String id, String pwd, String name, String email, String b_num, String phone, String l_phone, String address, String d_address, int postal_code,
-                    String r_num, String member_type, String business, Timestamp join_date) {
-		this.id = id;
-		this.pwd = pwd;
-		this.name = name;
-		this.email = email;
-		this.b_num = b_num;
-		this.phone = phone;
-		this.l_phone = l_phone;
-		this.address = address;
-		this.d_address = d_address;
-		this.postal_code = postal_code;
-		this.r_num = r_num;
-		this.member_type = member_type;
-		this.business = business;
-		this.join_date = join_date;
+
+	public MemberVO(String mi_id, String mi_password, String mi_name, String mi_email, String mi_phone, String mi_wireline,
+					String mi_address, String mi_addressDetail, String mi_addressCode, String mi_regidentRegNumber, Timestamp mi_joinDate) {
+		this.mi_id = mi_id;
+		this.mi_password = mi_password;
+		this.mi_name = mi_name;
+		this.mi_email = mi_email;
+		this.mi_phone = mi_phone;
+		this.mi_wireline = mi_wireline;
+		this.mi_address = mi_address;
+		this.mi_addressDetail = mi_addressDetail;
+		this.mi_addressCode = mi_addressCode;
+		this.mi_regidentRegNumber = mi_regidentRegNumber;
+		this.mi_joinDate = mi_joinDate;
 	}
 
-	public String getId() {
-		return id;
+	public String getMi_id() {
+		return mi_id;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setMi_id(String mi_id) {
+		this.mi_id = mi_id;
 	}
 
-	public String getPwd() {
-		return pwd;
+	public String getMi_password() {
+		return mi_password;
 	}
 
-	public void setPwd(String pwd) {
-		this.pwd = pwd;
+	public void setMi_password(String mi_password) {
+		this.mi_password = mi_password;
 	}
 
-	public String getName() {
-		return name;
+	public String getMi_name() {
+		return mi_name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public String getEmail() {
-		return email;
+	public void setMi_name(String mi_name) {
+		this.mi_name = mi_name;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public String getMi_email() {
+		return mi_email;
 	}
 
-	public String getB_num() {
-		return b_num;
+	public void setMi_email(String mi_email) {
+		this.mi_email = mi_email;
 	}
 
-	public void setB_num(String b_num) {
-		this.b_num = b_num;
+	public String getMi_phone() {
+		return mi_phone;
 	}
 
-	public String getPhone() {
-		return phone;
+	public void setMi_phone(String mi_phone) {
+		this.mi_phone = mi_phone;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public String getMi_wireline() {
+		return mi_wireline;
 	}
 
-	public String getL_phone() {
-		return l_phone;
+	public void setMi_wireline(String mi_wireline) {
+		this.mi_wireline = mi_wireline;
 	}
 
-	public void setL_phone(String l_phone) {
-		this.l_phone = l_phone;
+	public String getMi_address() {
+		return mi_address;
 	}
 
-	public String getAddress() {
-		return address;
+	public void setMi_address(String mi_address) {
+		this.mi_address = mi_address;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public String getMi_addressDetail() {
+		return mi_addressDetail;
 	}
 
-	public String getD_address() {
-		return d_address;
+	public void setMi_addressDetail(String mi_addressDetail) {
+		this.mi_addressDetail = mi_addressDetail;
 	}
 
-	public void setD_address(String d_address) {
-		this.d_address = d_address;
+	public String getMi_addressCode() {
+		return mi_addressCode;
 	}
 
-	public int getPostal_code() {
-		return postal_code;
+	public void setMi_addressCode(String addressCode) {
+		this.mi_addressCode = addressCode;
 	}
 
-	public void setPostal_code(int postal_code) {
-		this.postal_code = postal_code;
+	public String getMi_regidentRegNumber() {
+		return mi_regidentRegNumber;
 	}
 
-	public String getR_num() {
-		return r_num;
+	public void setMi_regidentRegNumber(String mi_regidentRegNumber) {
+		this.mi_regidentRegNumber = mi_regidentRegNumber;
 	}
 
-	public void setR_num(String r_num) {
-		this.r_num = r_num;
+	public Timestamp getMi_joinDate() {
+		return mi_joinDate;
 	}
 
-	public String getMember_type() {
-		return member_type;
+	public void setMi_joinDate(Timestamp mi_joinDate) {
+		this.mi_joinDate = mi_joinDate;
 	}
-
-	public void setMember_type(String member_type) {
-		this.member_type = member_type;
-	}
-	
-	public String getBusiness() {
-		return business;
-	}
-
-	public void setBusiness(String business) {
-		this.business = business;
-	}
-
-	public Timestamp getJoin_date() {
-		return join_date;
-	}
-
-	public void setJoin_date(Timestamp join_date) {
-		this.join_date = join_date;
-	}
-	
-	
 }

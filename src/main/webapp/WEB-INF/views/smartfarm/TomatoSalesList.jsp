@@ -21,15 +21,96 @@
         @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
     </style>
 
+    <style>
+        .Item_Information {
+            border-radius: 10px;
+            border: 5px solid #04AA6D;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+        }
+    </style>
+
 </head>
 <body>
 <%--몸통--%>
 <section>
     <article>
         <div id="Main_Box" align="center">
-            <h1> 상품 판매 리스트 </h1>
-            <img src="${contextPath}/resources/image/pic1.jpg" alt="promo1" width="1000" height="500">
+            <h1> 건조기 / 탈곡기 </h1>
+
+            <div class=front style="display: flex; margin-top: 50px" >
+                <div class="Image_Box" style="border-radius: 10px">
+                    <img src="${contextPath}/resources/image/농업용건조기.jpg" alt="promo1" width="500" height="500">
+                </div>
+                <div class="Item_Information">
+                    <h3> 건조기 </h3>
+                    <table>
+                        <tr>
+                            <th>
+                                제목 1
+                            </th>
+                            <td>
+                                <input type="text" name=""  value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                제목 2
+                            </th>
+                            <td>
+                                <input type="text" name=""  value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                특징
+                            </th>
+                            <td>
+                                <input type="text" name=""  value="">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class=front style="display: flex">
+                <div class="Image_Box" style="border-radius: 10px">
+                    <img src="${contextPath}/resources/image/탈곡기.jpg" alt="promo1" width="500" height="500">
+                </div>
+                <div class="Item_Information">
+                    <h3> 탈곡기 </h3>
+                    <table>
+                        <tr>
+                            <th>
+                                제목 1
+                            </th>
+                            <td>
+                                <input type="text" name=""  value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                제목 2
+                            </th>
+                            <td>
+                                <input type="text" name=""  value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                특징
+                            </th>
+                            <td>
+                                <input type="text" name=""  value="">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
+
+
     </article>
 </section>
 
@@ -38,12 +119,14 @@
         <div class="container">
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="1"
                              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                              preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"/>
+<%--                            <rect width="100%" height="100%" fill="#55595c"/>--%>
+                            <img src="${contextPath}/resources/image/신일종합건조기.jpg" alt="promo1" width="100%" height="100%">
                             <%--                            <text x="50%" y="50%" fill="#eceeef" dy=".3em" al>Thumbnail</text>--%>
                         </svg>
 
@@ -63,10 +146,11 @@
 
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="1"
                              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                              preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"/>
+<%--                            <rect width="100%" height="100%" fill="#55595c"/>--%>
+                            <img src="${contextPath}/resources/image/성보탈곡기.jpg" alt="promo1" width="100%" height="100%">
                         </svg>
 
                         <div class="card-body">
@@ -83,13 +167,13 @@
                     </div>
                 </div>
 
-
                 <div class="col">
                     <div class="card shadow-sm">
-                        <svg class="bd-placeholder-img card-img-top" width="100%" height="225"
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="1"
                              xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                              preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title>
-                            <rect width="100%" height="100%" fill="#55595c"/>
+<%--                            <rect width="100%" height="100%" fill="#55595c"/>--%>
+                            <img src="${contextPath}/resources/image/곡물탈곡기.jpg" alt="promo1" width="100%" height="100%">
                         </svg>
 
                         <div class="card-body">

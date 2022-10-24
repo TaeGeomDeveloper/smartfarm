@@ -11,7 +11,7 @@
 
 <html>
 <head>
-    <title>Board</title>
+    <title>Reference</title>
 
     <!-- 스타일시트 연결 -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -37,7 +37,7 @@
 <section>
     <article>
         <div id="Main_Box" align="center" style="margin-top: 30px">
-            <h1> 자유 게시판 </h1>
+            <h1> 자료실 </h1>
 
             <div class="d-flex justify-content-center" style="width: 80%; text-align: center">
                 <table class="table" style="margin-top: 30px">

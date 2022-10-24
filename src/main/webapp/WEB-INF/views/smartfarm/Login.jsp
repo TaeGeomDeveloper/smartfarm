@@ -50,14 +50,14 @@
                     <h1 style="text-align: center"> 로그인 </h1>
                     <tr>
                         <td class="form-floating w-80" align="center">
-                            <input type="text" class="form-control" id="floatingInput" placeholder="아이디" name="id">
+                            <input type="text" class="form-control" id="floatingInput" placeholder="아이디" name="mi_id">
                             <label for="floatingInput"></label>
                         </td>
                     </tr>
                     <tr>
                         <td class="form-floating w-80" align="center">
                             <input type="password" class="form-control" id="floatingPassword" placeholder="비밀번호"
-                                   name="pwd">
+                                   name="mi_password">
                             <label for="floatingPassword"></label>
                         </td>
                     </tr>

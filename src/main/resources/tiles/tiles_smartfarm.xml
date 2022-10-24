@@ -46,9 +46,49 @@
         <put-attribute name="body" value="/WEB-INF/views/smartfarm/WriteSales.jsp" />
     </definition>
 
-    <definition name="/smartfarm/SalesList" extends="baseLayout">
+    <definition name="/smartfarm/TomatoSalesList" extends="baseLayout">
         <put-attribute name="title" value="상품 판매 리스트" />
-        <put-attribute name="body" value="/WEB-INF/views/smartfarm/SalesList.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/TomatoSalesList.jsp" />
+    </definition>
+
+    <definition name="/smartfarm/PotatoSalesList" extends="baseLayout">
+        <put-attribute name="title" value="상품 판매 리스트" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/PotatoSalesList.jsp" />
+    </definition>
+
+    <definition name="/smartfarm/ItemInfo" extends="baseLayout">
+        <put-attribute name="title" value="상품 상세 페이지" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/ItemInfo.jsp" />
+    </definition>
+
+    <definition name="/smartfarm/Farm" extends="baseLayout">
+        <put-attribute name="title" value="생육 정보 페이지" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/Farm.jsp" />
+    </definition>
+
+    <definition name="/smartfarm/Notice" extends="baseLayout">
+        <put-attribute name="title" value="공지 사항 페이지" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/Notice.jsp" />
+    </definition>
+
+    <definition name="/smartfarm/Board" extends="baseLayout">
+        <put-attribute name="title" value="자유게시판 페이지" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/Board.jsp" />
+    </definition>
+
+    <definition name="/smartfarm/Reference" extends="baseLayout">
+        <put-attribute name="title" value="자료실 페이지" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/Reference.jsp" />
+    </definition>
+
+    <definition name="/smartfarm/Support" extends="baseLayout">
+        <put-attribute name="title" value="지원 사업 페이지" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/Support.jsp" />
+    </definition>
+
+    <definition name="/smartfarm/Advice" extends="baseLayout">
+        <put-attribute name="title" value="상담문의 페이지" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/Advice.jsp" />
     </definition>
 
 </tiles-definitions>

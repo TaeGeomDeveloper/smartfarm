@@ -67,47 +67,141 @@ public class MemberController {
 		mav.setViewName(viewName);
 		return mav;
 	}
-	
+
+	// 공지사항
+	@RequestMapping(value = "/Notice.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView Notice(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/Notice";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
+	// 자유 게시판
+	@RequestMapping(value = "/Board.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView Board(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/Board";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
+	// 자료실
+	@RequestMapping(value = "/Reference.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView Reference(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/Reference";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
+	// 지원 사업
+	@RequestMapping(value = "/Support.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView Support(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/Support";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
+	// 상담 문의
+	@RequestMapping(value = "/Advice.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView Advice(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/Advice";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
+	@RequestMapping(value = "/TomatoSalesList.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView TomatoSalesList(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/TomatoSalesList";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
+	@RequestMapping(value = "/PotatoSalesList.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView PotatoSalesList(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/PotatoSalesList";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
+	@RequestMapping(value = "/ItemInfo.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView ItemInfo(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/ItemInfo";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
+	@RequestMapping(value = "/Farm.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView Farm(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/Farm";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
+	@RequestMapping(value = "/Sample.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView Sample(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/Sample";
+		mav.setViewName(viewName);
+		return mav;
+	}
+
 	@RequestMapping(value = "/registProcess.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView registProcess(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		ModelAndView mav = new ModelAndView();
-		
-		String id = request.getParameter("id");
-		String pwd = request.getParameter("pwd");
-		String name = request.getParameter("name");
-		String email = request.getParameter("email");
-		String b_num = request.getParameter("b_num");	
-		String[] phone = request.getParameterValues("phone");
-		String[] l_phone = request.getParameterValues("l_phone");
-		String pNumber =  phone[0] + phone[1] + phone[2];
-		String lNumber = l_phone[0] + l_phone[1] + l_phone[2];
-		String address = request.getParameter("address");
-		String d_address = request.getParameter("d_address");
-		String postal_code = request.getParameter("postal_code");
-		String r_num = request.getParameter("r_num");
-		String member_type = request.getParameter("member_type");
-		String business = request.getParameter("business");
-				
-		MemberVO memberVO = new MemberVO(id, pwd, name, email, b_num, pNumber, lNumber, address, d_address, Integer.parseInt(postal_code), r_num, member_type, business, null);
-		
+
+		String mi_id = request.getParameter("mi_id");
+		String mi_password = request.getParameter("mi_password");
+		String mi_name = request.getParameter("mi_name");
+		String mi_email = request.getParameter("mi_email");
+		String[] mi_phone = request.getParameterValues("mi_phone");
+		String[] mi_wireline = request.getParameterValues("mi_wireline");
+		String phone =  mi_phone[0] + mi_phone[1] + mi_phone[2];
+		String wireline = mi_wireline[0] + mi_wireline[1] + mi_wireline[2];
+		String mi_address = request.getParameter("mi_address");
+		String mi_addressDetail = request.getParameter("mi_addressDetail");
+		String mi_addressCode = request.getParameter("mi_addressCode");
+		String mi_regidentRegNumber = request.getParameter("mi_regidentRegNumber");
+
+		System.out.println(mi_addressDetail);
+
+		MemberVO memberVO = new MemberVO(mi_id, mi_password, mi_name, mi_email, phone,  wireline, mi_address, mi_addressDetail, mi_addressCode, mi_regidentRegNumber, null);
+
 		memberDAO.insertOneMember(memberVO);
 		mav.setViewName("Main");
 		return mav;
 	}
-	
+
 	@RequestMapping(value="/loginProcess.do", method= RequestMethod.POST)
-	public ModelAndView loginProcess(@RequestParam("id") String id, @RequestParam("pwd") String pwd, HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public ModelAndView loginProcess(@RequestParam("mi_id") String mi_id, @RequestParam("mi_password") String mi_password, HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
-		
-		MemberVO memberVO = memberDAO.checkMember(id, pwd);
-		
+
+		MemberVO memberVO = memberDAO.checkMember(mi_id, mi_password);
+
 		if(memberVO!=null) {
 			System.out.println("login ok");
 			request.getSession().setAttribute("user", memberVO);
 //			mav.setViewName("redirect:/smartfarm/Main.do");
 			mav.setViewName("Main");
 		}else{
-			System.out.println("wrong info"); 
+			System.out.println("wrong info");
 			mav.setViewName("/smartfarm/Login");
 		}
 		return mav;
@@ -122,12 +216,14 @@ public class MemberController {
 		mav.setViewName("Main");
 		return mav;
 	}
+	//내 정보 버튼 클릭 시 해당 회원 개인정보 리스트 출력
 	@RequestMapping(value = "/ReadInfo.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView readInfo(HttpServletRequest request, HttpServletResponse response) throws Exception{
 		ModelAndView mav = new ModelAndView();
-		String id = request.getParameter("id");
-		MemberVO member = memberDAO.selectOneMember(id);
+		String mi_id = request.getParameter("mi_id");
+		MemberVO member = memberDAO.selectOneMember(mi_id);
 		mav.addObject("member",member);
+		System.out.println(member);
 		mav.setViewName("/smartfarm/ReadInfo");
 		return mav;
 	}
@@ -137,18 +233,22 @@ public class MemberController {
 		ModelAndView mav = new ModelAndView();
 		memberDAO.updateOneMember(member);
 		mav.addObject("member",member);
-		System.out.println("memberID--->"+member.getId());
-		mav.setViewName("redirect:/smartfarm/ReadInfo.do?id="+member.getId()+"&mode=r");
+		System.out.println("memberID--->"+member.getMi_id());
+		mav.setViewName("redirect:/smartfarm/ReadInfo.do?mi_id="+member.getMi_id()+"&mode=r");
 		return mav;
 	}
 
 	@RequestMapping(value = "/deleteMember.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView deleteMember(HttpServletRequest request, HttpServletResponse response){
 		ModelAndView mav = new ModelAndView();
-		String id = request.getParameter("id");
-		memberDAO.deleteOneMember(id);
+
+		String mi_id = request.getParameter("mi_id");
+		System.out.println("memberID--->"+mi_id);
+		memberDAO.deleteOneMember(mi_id);
+//		mav.setViewName("redirect:/smartfarm/Main.do");
 		request.getSession().invalidate();
-		mav.setViewName("redirect:/smartfarm/Main.do");
+		//String viewName = "redirect:/smartfarm/Main.do";
+		mav.setViewName("Main");
 		return mav;
 	}
 
@@ -161,6 +261,42 @@ public class MemberController {
 		mav.setViewName("List");
 		return mav;
 	}
+
+//	@RequestMapping(value = "/findPwd.do", method = {RequestMethod.POST, RequestMethod.GET})
+//	public ModelAndView findPwd(HttpServletRequest request, HttpServletResponse response) throws Exception{
+//		request.setCharacterEncoding("UTF-8");
+//		response.setContentType("text/html;charset=UTF-8");
+//		ModelAndView mav = new ModelAndView();
+//		String mi_id = request.getParameter("mi_id");
+//		String mi_email = request.getParameter("mi_email");
+//		MemberVO member = memberDAO.findPwd(mi_id,mi_email);
+//		if(member!=null){
+//			String mi_password = member.getMi_password();
+//			System.out.println(mi_password+"find pwd success");
+//			mailService.sendMail(mi_email,"smartfarm find password",mi_id+" password is"+mi_password+".");
+//			mav.setViewName("/smartfarm/Login");
+//		}else{
+//			mav.setViewName("/smartfarm/Forgot");
+//		}
+//		return mav;
+//	}
+//
+//	@RequestMapping(value = "/findId.do", method = {RequestMethod.POST, RequestMethod.GET})
+//	public ModelAndView findId(HttpServletRequest request, HttpServletResponse response) throws  Exception{
+//		ModelAndView mav = new ModelAndView();
+//		String mi_name = request.getParameter("mi_name");
+//		String mi_phone = request.getParameter("mi_phone");
+//
+//		MemberVO member = memberDAO.findId(mi_name, mi_phone);
+//		if(member!=null){
+//			String mi_id = member.getMi_id();
+//			System.out.println(mi_id+" find id success");
+//			mav.setViewName("/smartfarm/Login");
+//		}else{
+//			mav.setViewName("/smartfarm/Forgot");
+//		}
+//		return mav;
+//	}
 
 	private String getViewName(HttpServletRequest request) throws Exception {
 		String contextPath = request.getContextPath();
