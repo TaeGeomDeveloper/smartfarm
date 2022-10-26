@@ -46,9 +46,9 @@
         <put-attribute name="body" value="/WEB-INF/views/smartfarm/WriteSales.jsp" />
     </definition>
 
-    <definition name="/smartfarm/TomatoSalesList" extends="baseLayout">
-        <put-attribute name="title" value="상품 판매 리스트" />
-        <put-attribute name="body" value="/WEB-INF/views/smartfarm/TomatoSalesList.jsp" />
+    <definition name="/smartfarm/AgriculturalSupplies" extends="baseLayout">
+        <put-attribute name="title" value="농업 용품 페이지" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/AgriculturalSupplies.jsp" />
     </definition>
 
     <definition name="/smartfarm/PotatoSalesList" extends="baseLayout">
@@ -89,6 +89,16 @@
     <definition name="/smartfarm/Advice" extends="baseLayout">
         <put-attribute name="title" value="상담문의 페이지" />
         <put-attribute name="body" value="/WEB-INF/views/smartfarm/Advice.jsp" />
+    </definition>
+
+    <definition name="/smartfarm/HowFarmer" extends="baseLayout">
+        <put-attribute name="title" value="농부 절차 페이지" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/HowFarmer.jsp" />
+    </definition>
+
+    <definition name="/smartfarm/News" extends="baseLayout">
+        <put-attribute name="title" value="관련 뉴스 페이지" />
+        <put-attribute name="body" value="/WEB-INF/views/smartfarm/News.jsp" />
     </definition>
 
 </tiles-definitions>

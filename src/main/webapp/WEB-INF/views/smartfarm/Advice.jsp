@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <html>
 <head>
     <title>Advice</title>
@@ -15,10 +16,7 @@
     <!-- 스타일시트 연결 -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
 
-    <%-- 폰트 --%>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
-    </style>
+
 
 </head>
 <body>
@@ -34,24 +32,24 @@
                 <!-- Three columns of text below the carousel -->
                 <div class="row">
                     <div class="col-lg-4">
-                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                        <img src="${contextPath}/resources/image/Advice/상담1.jpg" alt="상담1" width="140" height="140" class="rounded-circle">
 
-                        <h2 class="fw-normal">Heading</h2>
-                        <p>Some representative placeholder content for the three columns of text below the carousel. This is the first column.</p>
+                        <h2 class="fw-normal">A</h2>
+                        <p>전문가 A 에 대한 설명</p>
                         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
                     </div><!-- /.col-lg-4 -->
                     <div class="col-lg-4">
-                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                        <img src="${contextPath}/resources/image/Advice/상담2.jpg" alt="상담2" width="140" height="140" class="rounded-circle">
 
-                        <h2 class="fw-normal">Heading</h2>
-                        <p>Another exciting bit of representative placeholder content. This time, we've moved on to the second column.</p>
+                        <h2 class="fw-normal">B</h2>
+                        <p>전문가 B 에 대한 설명</p>
                         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
                     </div><!-- /.col-lg-4 -->
                     <div class="col-lg-4">
-                        <svg class="bd-placeholder-img rounded-circle" width="140" height="140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#777"/><text x="50%" y="50%" fill="#777" dy=".3em">140x140</text></svg>
+                        <img src="${contextPath}/resources/image/Advice/상담3.jpg" alt="상담3" width="140" height="140" class="rounded-circle">
 
-                        <h2 class="fw-normal">Heading</h2>
-                        <p>And lastly this, the third column of representative placeholder content.</p>
+                        <h2 class="fw-normal">C</h2>
+                        <p>전문가 C 에 대한 설명</p>
                         <p><a class="btn btn-secondary" href="#">View details &raquo;</a></p>
                     </div><!-- /.col-lg-4 -->
                 </div><!-- /.row -->
@@ -63,12 +61,11 @@
 
                 <div class="row featurette">
                     <div class="col-md-7">
-                        <h2 class="featurette-heading fw-normal lh-1">First featurette heading. <span class="text-muted">It’ll blow your mind.</span></h2>
-                        <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
+                        <h2 class="featurette-heading fw-normal lh-1"> 전문가 A <span class="text-muted">It’ll blow your mind.</span></h2>
+                        <p class="lead"> 당신의 고민을 한번에 해결.</p>
                     </div>
                     <div class="col-md-5">
-                        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+                        <img src="${contextPath}/resources/image/Advice/상담1.jpg" alt="상담1" width="500" height="500">
                     </div>
                 </div>
 
@@ -76,12 +73,11 @@
 
                 <div class="row featurette">
                     <div class="col-md-7 order-md-2">
-                        <h2 class="featurette-heading fw-normal lh-1">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
-                        <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+                        <h2 class="featurette-heading fw-normal lh-1">전문가 B <span class="text-muted">See for yourself.</span></h2>
+                        <p class="lead"> 농사 최고의 도우미 </p>
                     </div>
                     <div class="col-md-5 order-md-1">
-                        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+                        <img src="${contextPath}/resources/image/Advice/상담2.jpg" alt="상담2" width="500" height="500">
                     </div>
                 </div>
 
@@ -89,12 +85,11 @@
 
                 <div class="row featurette">
                     <div class="col-md-7">
-                        <h2 class="featurette-heading fw-normal lh-1">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-                        <p class="lead">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+                        <h2 class="featurette-heading fw-normal lh-1">전문가 C <span class="text-muted">Checkmate.</span></h2>
+                        <p class="lead"> 당신의 농사를 설계 해줍니다. </p>
                     </div>
                     <div class="col-md-5">
-                        <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
-
+                        <img src="${contextPath}/resources/image/Advice/상담3.jpg" alt="상담3" width="500" height="500">
                     </div>
                 </div>
 

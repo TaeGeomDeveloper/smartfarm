@@ -58,7 +58,7 @@ public class MemberController {
 		mav.setViewName(viewName);
 		return mav;
 	}
-
+	// 회원가입
 	@RequestMapping(value = "/Register.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView Register(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
@@ -67,17 +67,15 @@ public class MemberController {
 		mav.setViewName(viewName);
 		return mav;
 	}
-
 	// 공지사항
 	@RequestMapping(value = "/Notice.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView Notice(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		String viewName = this.getViewName(request);
-		viewName= "/smartfarm/Notice";
+		viewName = "/smartfarm/Notice";
 		mav.setViewName(viewName);
 		return mav;
 	}
-
 	// 자유 게시판
 	@RequestMapping(value = "/Board.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView Board(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -87,7 +85,6 @@ public class MemberController {
 		mav.setViewName(viewName);
 		return mav;
 	}
-
 	// 자료실
 	@RequestMapping(value = "/Reference.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView Reference(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -97,7 +94,6 @@ public class MemberController {
 		mav.setViewName(viewName);
 		return mav;
 	}
-
 	// 지원 사업
 	@RequestMapping(value = "/Support.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView Support(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -107,7 +103,6 @@ public class MemberController {
 		mav.setViewName(viewName);
 		return mav;
 	}
-
 	// 상담 문의
 	@RequestMapping(value = "/Advice.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView Advice(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -117,12 +112,30 @@ public class MemberController {
 		mav.setViewName(viewName);
 		return mav;
 	}
-
-	@RequestMapping(value = "/TomatoSalesList.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView TomatoSalesList(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	// 농업 용품
+	@RequestMapping(value = "/AgriculturalSupplies.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView AgriculturalSupplies(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ModelAndView mav = new ModelAndView();
 		String viewName = this.getViewName(request);
-		viewName= "/smartfarm/TomatoSalesList";
+		viewName= "/smartfarm/AgriculturalSupplies";
+		mav.setViewName(viewName);
+		return mav;
+	}
+	// 농부 절차
+	@RequestMapping(value = "/HowFarmer.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView HowFarmer(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/HowFarmer";
+		mav.setViewName(viewName);
+		return mav;
+	}
+	// 관련 뉴스
+	@RequestMapping(value = "/News.do", method = {RequestMethod.GET, RequestMethod.POST})
+	public ModelAndView News(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		String viewName = this.getViewName(request);
+		viewName= "/smartfarm/News";
 		mav.setViewName(viewName);
 		return mav;
 	}

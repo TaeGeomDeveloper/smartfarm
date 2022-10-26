@@ -85,7 +85,7 @@
                         <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 shadow w-220px">
                             <li><a class="dropdown-item rounded-2 active" href="${contextPath}/smartfarm/Notice.do">공지사항</a></li>
                             <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/Board.do">자유게시판</a></li>
-                            <li><a class="dropdown-item rounded-2" href="#">관련 뉴스</a></li>
+                            <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/News.do">관련 뉴스</a></li>
                             <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/Support.do">농부 지원 사업</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/Reference.do">자료실</a></li>
@@ -116,11 +116,11 @@
                                 </a>
 
                                 <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 shadow w-220px">
-                                    <li><a class="dropdown-item rounded-2 active" href="${contextPath}/smartfarm/Farm.do">생육 정보</a></li>
-                                    <li><a class="dropdown-item rounded-2" href="#">귀농 절차</a></li>
+                                    <li><a class="dropdown-item rounded-2 active" href="${contextPath}/smartfarm/Farm.do">작물 선택</a></li>
+                                    <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/HowFarmer.do">귀농 절차</a></li>
                                     <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/Advice.do">전문가 상담/문의</a></li>
                                     <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/TomatoSalesList.do">농업 용품</a></li>
+                                    <li><a class="dropdown-item rounded-2" href="${contextPath}/smartfarm/AgriculturalSupplies.do">농업 용품</a></li>
                                 </ul>
                             </li>
                         </c:when>
