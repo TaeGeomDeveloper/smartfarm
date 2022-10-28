@@ -11549,7 +11549,7 @@ nhn.husky.SE2M_Accessibility = jindo.$Class({
 				self._nextFocusElement = node;
 			}
 
-			return;
+
 		}else{
 			// 필터링 조건에 부합하지 않는다면, 자식들을 기준으로 반복하게 된다.
 			if(isReversed){
@@ -12860,7 +12860,7 @@ function Shortcut(sKey,sId){
 		return action.init(store.get(fakeId),sKey);
 	}
 	alert(sId+"는 반드시 string이거나  없어야 됩니다.");
-};
+}
 
 
 Shortcut.Store = {
@@ -13019,13 +13019,13 @@ Shortcut.Data = jindo.$Class({
 				event:fpEvent,
 				exceptions:[]
 			});
-		};
+		}
 	},
 	addException:function(fpException,sRawKey){
 		var commonExceptions = this.keys[sRawKey].commonExceptions;
 		if(!Shortcut.Helper.hasException(fpException,commonExceptions)){
 			commonExceptions.push(fpException);
-		};
+		}
 	},
 	removeException:function(fpException,sRawKey){
 		var commonExceptions = this.keys[sRawKey].commonExceptions;
@@ -13108,7 +13108,7 @@ Shortcut.Helper = {
 			if(aEvents.event==fpEvent){
 				return true;
 			}
-		};
+		}
 		return false;
 	},
 	hasException:function(fpException,commonExceptions){
@@ -13117,7 +13117,7 @@ Shortcut.Helper = {
 			if(commonExceptions[i]==fpException){
 				return true;
 			}
-		};
+		}
 		return false;
 	},
 	bind:function(wfFunc,oElement,sType){
@@ -14493,7 +14493,7 @@ nhn.husky.PopUpManager.getInstance = function(oApp) {
 				whtData.forEach(function(v,k){
 					if (v == oCompare) { 
 						key = k; 
-						return; 
+
 					}
 				});
 				return key;
@@ -15559,7 +15559,7 @@ getFilteredHashTable({
 				if (re2.test(cdata)) {
 					//cdata = parseFloat(cdata);
 				}else if (cdata == "true" || cdata == "false"){
-					cdata = new Boolean(cdata);
+					cdata = Boolean(cdata);
 				}
 
 				if(typeof par =='undefined') {
@@ -21796,7 +21796,7 @@ nhn.FindReplace = jindo.$Class({
 
 						j -= nOriginLen;
 					}
-					continue;
+
 				}
 			}
 			/*

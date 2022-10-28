@@ -19,6 +19,25 @@
         @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
     </style>
 
+    <script>
+        function fn_find_pwd() {
+            var Find = document.Find;
+
+            Find.method = "post";
+            Find.action = "./findPwd.do";
+            Find.submit();
+            //alert("입력하신 이메일로 비밀번호를 발송했습니다.");
+        }
+
+        function fn_find_id() {
+            var Find = document.Find;
+
+            Find.method = "post";
+            Find.action = "./findId.do";
+            Find.submit();
+        }
+    </script>
+
 </head>
 <body>
 
@@ -37,7 +56,7 @@
                                     <td class="form-floating w-80" align="center">
                                         이름
                                         <input type="text" class="form-control" id="floatingInput" placeholder="이름"
-                                               name="name">
+                                               name="mi_name">
                                         <label for="floatingInput"></label>
                                     </td>
                                 </tr>
@@ -46,13 +65,13 @@
                                         휴대전화
                                         <input type="text" class="form-control" id="floatingInputPhone"
                                                placeholder="휴대전화"
-                                               name="phone">
+                                               name="mi_phone">
                                         <label for="floatingInputPhone"></label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="center">
-                                        <button class="button w-100" type="submit" onclick="fn_sendPerson()">ID 찾기
+                                        <button class="button w-100" type="submit" onclick="fn_find_id()">ID 찾기
                                         </button>
                                     </td>
                                 </tr>
@@ -65,22 +84,22 @@
                                     <td class="form-floating w-80" align="center">
                                         아이디
                                         <input type="text" class="form-control" id="floatingInputID" placeholder="아이디"
-                                               name="id">
+                                               name="mi_id">
                                         <label for="floatingInputID"></label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td class="form-floating w-80" align="center">
-                                        휴대전화
+                                        이메일
                                         <input type="text" class="form-control" id="floatingInputPhone2"
-                                               placeholder="휴대전화"
-                                               name="phone">
+                                               placeholder="이메일"
+                                               name="mi_email">
                                         <label for="floatingInputPhone2"></label>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td align="center">
-                                        <button class="button w-100" type="submit" onclick="fn_sendPerson()">PW 찾기
+                                        <button class="button w-100" type="submit" onclick="fn_find_pwd()">PW 찾기
                                         </button>
                                     </td>
                                 </tr>

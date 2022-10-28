@@ -1,4 +1,4 @@
-<%@ page import="smartfarm.vo.MemberVO" %><%--
+<%@ page import="com.tp.farm.vo.MemberVO" %><%--
   Created by IntelliJ IDEA.
   User: User
   Date: 2022-10-05

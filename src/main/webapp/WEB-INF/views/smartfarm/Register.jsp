@@ -12,6 +12,7 @@
 
     <!-- 스타일시트 연결 -->
     <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 
     <%-- 폰트 --%>
     <style>
@@ -52,6 +53,110 @@
         }
     </script>
 
+    <script>
+        $(document).ready(function (){
+            //console.log('in');
+            $('#idCheck').on('click',function (event){
+                //alert(event.target.id);
+                let memberId = $('#memberId').val();
+                //alert(memberId);
+                $.ajax({
+                    type : 'get',
+                    dataType : 'text',
+                    url : "/tp/smartfarm/idCheck.do",
+                    data : {mi_id : memberId},
+                    success : function (data, status) {
+                        //alert(data);
+                        if(data=='true'){
+                            $('#msg').html("중복된 아이디 입니다.")
+                            $('#memberId').val("");
+                            $('#memberId').focus();
+                        }else{
+                            $('#msg').html("사용할 수 있는 아이디 입니다.")
+                            $('#isIdCheck').val('true');
+                        }
+                    },
+                    error : function (data, status){
+                        alert('error'+status);
+                    },
+                    complete : function (xhr, status){
+                        //alert(xhr.status);
+                    }
+                });
+            });
+
+            // $('#validate').on('click', function (event){
+            //     let temp = $('#isIdCheck').val();
+            //     if(temp!=null){
+            //         alert('ID 중복체크를 해주세요');
+            //         event.preventDefault();
+            //     }else{
+            //         $('#frm').action = '/smartfarm/Main.do';
+            //         $('#frm').submit();
+            //         alert('환영합니다^^');
+            //     }
+            // });
+        });
+    </script>
+
+    <script>
+        $(document).focusout(function () {
+            var pwd1 = $("#password_1").val();
+            var pwd2 = $("#password_2").val();
+
+            if ( pwd1 != '' && pwd2 == '' ) {
+                null;
+            } else if (pwd1 != "" || pwd2 != "") {
+                if (pwd1 == pwd2) {
+                    $("#success").css('display', 'inline-block');
+                    $('#success').html("비밀번호가 일치합니다");
+                    $("#fail").css('display', 'none');
+                } else {
+                    $("#success").css('display', 'none');
+                    $("#fail").css('display', 'inline-block');
+                    $('#fail').html("비밀번호가 일치하지 않습니다. 비밀번호를 재확인 해주세요.")
+                }
+            }
+        });
+    </script>
+
+    <script>
+        $(function (){
+            $("#sendSMS").click(function (){
+                const submitPop = document.getElementById("submitPop");
+                submitPop.style.display = 'inline-block';
+                let phoneNum = $("#mi_phone").val();
+                let phoneNum1 = $("#mi_phone1").val();
+                let phoneNum2 = $("#mi_phone2").val();
+                var sendNumber = phoneNum+phoneNum1+phoneNum2;
+                $.ajax({
+                    type: "POST",
+                    url: "./sendSMS.do",
+                    data: {to : sendNumber},
+                    cache: false,
+                    success: function (data){
+                        if(data=="error"){
+                            alert("휴대폰 번호가 올바르지 않습니다.");
+                        }else{
+                            //alert("전송 완료");
+                            code2 = data;
+                        }
+                    }
+                });
+            });
+
+            $("#checkQualifiedNumber").click(function (){
+                const validate = document.getElementById("validate")
+                if($("#authNum").val()==code2){
+                    alert("인증 성공");
+                    validate.style.display = 'inline-block';
+                }else{
+                    alert("인증 실패");
+
+                }
+            })
+        })
+    </script>
 
 </head>
 <body>
@@ -62,17 +167,28 @@
 
         <div id="Main_Box" align="center" style="margin-top: 50px;">
             <h1> 회원가입 </h1>
-            <form name="SendPerson" id="form" method="post">
+            <form name="SendPerson">
+                <input type="hidden" name="" id="isIdCheck" value="false">
                 <table>
                     <tr>
                         <th>ID</th>
-                        <td><input type="text" name="mi_id" id="memberId">
-                            <button class="button" name="idCheck">ID중복체크</button>
+                        <td>
+                            <input type="text" name="mi_id" id="memberId">
+                            <input type="button" class="button" name="id_check" value="중복확인" id="idCheck">
+                            <span id="msg" style="color:green"></span>
                         </td>
                     </tr>
                     <tr>
                         <th>PWD</th>
-                        <td><input type="password" name="mi_password"></td>
+                        <td><input type="password" name="mi_password" id="password_1"></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호 확인</th>
+                        <td>
+                            <input type="password" id="password_2" >
+                            <span id="success" style="display: none;"></span>
+                            <span id="fail" style="display: none; color: red"></span>
+                        </td>
                     </tr>
                     <tr>
                         <th>이름</th>
@@ -80,7 +196,9 @@
                     </tr>
                     <tr>
                         <th>주민등록번호</th>
-                        <td><input type="text" name="mi_regidentRegNumber"></td>
+                        <td><input type="text" name="mi_regidentRegNumber" maxlength="6"> -
+                            <input type="password" name="mi_regidentRegNumber" maxlength="7">
+                        </td>
                     </tr>
                     <div id="callBackDiv">
                         <input type="hidden"  style="width:500px;" id="roadFullAddr"  name="roadFullAddr" />
@@ -94,36 +212,56 @@
                     <tr>
                         <th>휴대전화</th>
                         <td>
-                            <select name="mi_phone">
+                            <select name="mi_phone"  id="mi_phone">
                                 <option value="010" selected="selected">010</option>
-                            </select>
-                            <input type="text" name="mi_phone"/> -
-                            <input type="text" name="mi_phone"/>
+                            </select>-
+                            <input type="text" name="mi_phone" id="mi_phone1" maxlength="4"/> -
+                            <input type="text" name="mi_phone" id="mi_phone2" maxlength="4"/>
+                            <input type="button"
+                                   id="sendSMS"
+                                   class="button"
+                                   value="인증번호 받기"/>
                         </td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>
+                            <span id="submitPop" style="display: none; color: lightgray">
+                                인증번호 발송이 완료되었습니다. 혹시 인증번호가 오지 않는다면 재발송 해주십시오.
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>인증 번호</th>
+                        <td><input type="text" id="authNum" placeholder="인증 번호를 입력하세요">
+                            <input type="button" value="확인" class="button" id="checkQualifiedNumber">
+                        </td>
+                        <td></td>
+                    </tr>
                     <tr>
                         <th>일반전화</th>
                         <td>
                             <select name="mi_wireline">
                                 <option value="기본값" selected="selected">--선택--</option>
-                                <option value="경기">031</option>
-                                <option value="인천">032</option>
-                                <option value="강원도">033</option>
-                                <option value="충청남도">041</option>
-                                <option value="대전">042</option>
-                                <option value="충청북도">043</option>
-                                <option value="세종시">044</option>
-                                <option value="부산">051</option>
-                                <option value="울산">052</option>
-                                <option value="대구">053</option>
-                                <option value="경상북도">054</option>
-                                <option value="경상남도">055</option>
-                                <option value="전라남도">061</option>
-                                <option value="광주">062</option>
-                                <option value="전라북도">063</option>
-                                <option value="제주도">064</option>
+                                <option value="031">031</option>
+                                <option value="032">032</option>
+                                <option value="033">033</option>
+                                <option value="041">041</option>
+                                <option value="042">042</option>
+                                <option value="043">043</option>
+                                <option value="044">044</option>
+                                <option value="051">051</option>
+                                <option value="052">052</option>
+                                <option value="053">053</option>
+                                <option value="054">054</option>
+                                <option value="055">055</option>
+                                <option value="061">061</option>
+                                <option value="062">062</option>
+                                <option value="063">063</option>
+                                <option value="064">064</option>
                             </select> -
-                            <input type="text" name="mi_wireline"/> -
-                            <input type="text" name="mi_wireline"/>
+                            <input type="text" name="mi_wireline" maxlength="3"/> -
+                            <input type="text" name="mi_wireline" maxlength="4"/>
                         </td>
                     </tr>
                     <tr>
@@ -132,12 +270,13 @@
                             <input type="text" name="mi_email"> @
                             <select name="mi_email">
                                 <option value="기본값" selected="selected">--선택--</option>
-                                <option value="네이버">naver.com</option>
-                                <option value="다음">daum.net</option>
-                                <option value="지메일">gmail.com</option>
-                                <option value="네이트">nate.com</option>
-                                <option value="직접입력">직접입력</option>
+                                <option value="@naver.com">naver.com</option>
+                                <option value="@daum.net">daum.net</option>
+                                <option value="@gmail.com">gmail.com</option>
+                                <option value="@nate.com">nate.com</option>
+                                <option value="직접입력" id="inputText">직접입력</option>
                             </select>
+
                         </td>
                     </tr>
                     <tr>
@@ -145,7 +284,7 @@
                         <td><input type="hidden" name="mi_joinDate"></td>
                     </tr>
                 </table>
-                <button class="button2" onclick="fn_sendPerson()">가입 하기</button>
+                <button class="button2" onclick="fn_sendPerson()" id="validate" style="display: none">가입 하기</button>
             </form>
         </div>
 
