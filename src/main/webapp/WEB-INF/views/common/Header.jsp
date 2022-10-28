@@ -100,6 +100,7 @@
                         <ul class="dropdown-menu gap-1 p-2 rounded-3 mx-0 shadow w-220px">
                             <li><a class="dropdown-item rounded-2" href="#">스마트팜 이란</a></li>
                             <li><a class="dropdown-item rounded-2" href="#">스마트팜 지원사업</a></li>
+                            <li><a class="dropdown-item rounded-2" href="${contextPath}/board/CreateNewBoard.do">Test</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

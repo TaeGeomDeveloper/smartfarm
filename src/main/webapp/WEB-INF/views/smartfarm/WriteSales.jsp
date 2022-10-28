@@ -18,7 +18,7 @@
         function save() {
             oEditors.getById["testContent"].exec("UPDATE_CONTENTS_FIELD",[]);
             frm.submit();
-            return;
+
         }
     </script>
 

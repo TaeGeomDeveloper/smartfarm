@@ -21,14 +21,14 @@
 
     <select id="selectAllMemberList" resultMap="memResult">
       <![CDATA[
-        select * from mi order by mi_joinDate desc
+        select * from member_information order by mi_joinDate desc
         ]]>
     </select>
 
 
     <select id="selectMemberById" resultType="memberVO"  parameterType="String" >
       <![CDATA[
-        select * from mi
+        select * from member_information
         where
             mi_id=#{mi_id}
         ]]>
@@ -36,7 +36,7 @@
 
     <select id="selectMemberByPwd" resultType="memberVO"  parameterType="String" >
       <![CDATA[
-        select * from mi
+        select * from member_information
         where
             mi_password=#{mi_password}
         ]]>
@@ -44,7 +44,7 @@
 
     <insert id="insertMember"  parameterType="memberVO">
         <![CDATA[
-        insert into mi(mi_id, mi_password, mi_name, mi_email, mi_phone, mi_wireline, mi_address, mi_addressDetail, mi_addressCode, mi_regidentRegNumber, mi_joinDate)
+        insert into member_information(mi_id, mi_password, mi_name, mi_email, mi_phone, mi_wireline, mi_address, mi_addressDetail, mi_addressCode, mi_regidentRegNumber, mi_joinDate)
         values(#{mi_id}, #{mi_password}, #{mi_name}, #{mi_email}, #{mi_phone}, #{mi_wireline}, #{mi_address}, #{mi_addressDetail}, #{mi_addressCode}, #{mi_regidentRegNumber}, now())
         ]]>
     </insert>
@@ -52,7 +52,7 @@
 
     <update id="updateMember"  parameterType="memberVO">
      <![CDATA[
-        update mi
+        update member_information
         set mi_password=#{mi_password}, mi_email=#{mi_email}, mi_phone=#{mi_phone}, mi_wireline=#{mi_wireline}, mi_address=#{mi_address}, mi_addressDetail=#{mi_addressDetail},
             mi_addressCode=#{mi_addressCode}
         where
@@ -62,7 +62,7 @@
 
     <delete id="deleteMember"  parameterType="String">
     <![CDATA[
-        delete from  mi
+        delete from  member_information
         where
             mi_id=#{mi_id}
         ]]>
@@ -70,7 +70,7 @@
 
     <select id="findMember" resultType="memberVO"  parameterType="java.util.Map" >
       <![CDATA[
-        select * from mi
+        select * from member_information
         where
             mi_id=#{mi_id} and mi_password = #{mi_password}
         ]]>
@@ -79,7 +79,7 @@
 
     <select id="findPwd" resultType="memberVO"  parameterType="java.util.Map" >
       <![CDATA[
-        select * from mi
+        select * from member_information
         where
             mi_id=#{mi_id} and mi_email = #{mi_email}
         ]]>
@@ -87,7 +87,7 @@
 
     <select id="findId" resultType="memberVO"  parameterType="java.util.Map" >
       <![CDATA[
-        select * from mi
+        select * from member_information
         where
             mi_name=#{mi_name} and mi_phone = #{mi_phone}
         ]]>
@@ -95,7 +95,7 @@
 
     <select id="selectId" resultType="int">
         <![CDATA[
-        select count(*) from mi
+        select count(*) from member_information
         where
             mi_id = #{mi_id}
         ]]>
