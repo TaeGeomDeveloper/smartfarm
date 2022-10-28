@@ -98,7 +98,7 @@
                 <div class="container">
                     <div class="carousel-caption text-end">
 <%--                        <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>--%>
-                            <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+                            <p><a class="btn btn-lg btn-primary" href="#">Learn more 버튼</a></p>
                     </div>
                 </div>
             </div>
